@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {Button} from '@/components/ui/button';
 import { getProductsWithPrices } from '@/lib/chargily';
-import ProductCard from '@/components/ProductCard';
+import {ProductCard} from '@/components/ui/ProductCard';
 import { Carousel } from '@/components/carousel';
 
 export const revalidate = 3600; 

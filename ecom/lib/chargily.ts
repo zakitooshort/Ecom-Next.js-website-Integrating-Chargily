@@ -34,6 +34,7 @@ export interface ProductWithPrice extends ChargilyProduct {
   prices: ChargilyPrice[];
   primaryPrice: ChargilyPrice | null;
   priceInDZD: number;
+  price_id: string; 
 }
 
 export function formatPrice(amountInCentimes: number): string {
@@ -105,6 +106,7 @@ export async function getProductsWithPrices(): Promise<ProductWithPrice[]> {
         prices: productPrices,
         primaryPrice: primaryPrice,
         priceInDZD: primaryPrice ? parseFloat(formatPrice(primaryPrice.amount)) : 0,
+        price_id: primaryPrice ? primaryPrice.id : '', 
       };
     });
 
